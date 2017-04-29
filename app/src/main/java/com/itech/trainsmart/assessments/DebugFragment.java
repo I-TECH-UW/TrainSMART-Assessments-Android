@@ -237,7 +237,7 @@ public class DebugFragment extends Fragment {
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        public void onFragmentInteraction(int position);
+        void onFragmentInteraction(int position);
     }
 
     public void showMessage(String title, String message) {

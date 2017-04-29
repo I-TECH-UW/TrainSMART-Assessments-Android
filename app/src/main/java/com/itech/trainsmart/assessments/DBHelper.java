@@ -680,7 +680,7 @@ public class DBHelper extends SQLiteOpenHelper{
 
         // remove duplicates
         Set<String> noDups = new LinkedHashSet<>(personID);
-        personID.clear();;
+        personID.clear();
         personID.addAll(noDups);
 
         // convert to array
@@ -720,7 +720,7 @@ public class DBHelper extends SQLiteOpenHelper{
 
         // remove duplicates
         Set<String> noDups = new LinkedHashSet<>(assessmentTypes);
-        assessmentTypes.clear();;
+        assessmentTypes.clear();
         assessmentTypes.addAll(noDups);
 
         // convert to array
@@ -811,7 +811,7 @@ public class DBHelper extends SQLiteOpenHelper{
 
         // remove duplicates
         Set<String> noDups = new LinkedHashSet<>(facility_names);
-        facility_names.clear();;
+        facility_names.clear();
         facility_names.addAll(noDups);
 
         // convert to array
@@ -874,7 +874,7 @@ public class DBHelper extends SQLiteOpenHelper{
 
         // remove duplicates
         Set<String> noDups = new LinkedHashSet<>(nationalIds);
-        nationalIds.clear();;
+        nationalIds.clear();
         nationalIds.addAll(noDups);
 
         // convert to array
@@ -1032,7 +1032,7 @@ public class DBHelper extends SQLiteOpenHelper{
 //                            + epo._answer + " "
 //            );
         }
-    };
+    }
 
     public Assessments getAssessments(int assessments_assessment_id) {
 
