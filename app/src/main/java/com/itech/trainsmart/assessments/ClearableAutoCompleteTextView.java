@@ -5,7 +5,6 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.AutoCompleteTextView;
 
 /**
  * sub class of {@link android.widget.AutoCompleteTextView} that includes a clear (dismiss / close) button with
@@ -14,7 +13,7 @@ import android.widget.AutoCompleteTextView;
  * @author Michael Derazon
  *
  */
-public class ClearableAutoCompleteTextView extends AutoCompleteTextView {
+public class ClearableAutoCompleteTextView extends android.support.v7.widget.AppCompatAutoCompleteTextView {
     // was the text just cleared?
     boolean justCleared = false;
 

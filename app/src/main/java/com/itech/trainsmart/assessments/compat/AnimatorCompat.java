@@ -12,8 +12,9 @@ import android.os.Build;
  * on API>=11
  * </p>
  * <p>
- * This class is used to provide animation to the {@link org.adw.library.widgets.discreteseekbar.DiscreteSeekBar}
+ * This class is used to provide animation to the {@link com.itech.trainsmart.assessments.DiscreteSeekBar}
  * when navigating with the Keypad
+ * source: org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
  * </p>
  *
  * @hide
