@@ -218,11 +218,11 @@ public class MultiTypeListAdapter extends BaseAdapter {
 
                 holder.spinnerWidget.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
-                    public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                    public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int dropdownEntryIndex, long id) {
                         Log.d("request!", "getView case 6:onItemSelected: " + position + " " + convertOptionIntToStr(position, spinnerArray));
                         // insert
-                        pageData.get(position).set_answer(convertOptionIntToStr(position, spinnerArray));
-                        dbHelp.setEditPageRow(pToA, pageData.get(assessment_position).get_assessments_questions_id(), convertOptionIntToStr(position, spinnerArray));
+                        pageData.get(position).set_answer(convertOptionIntToStr(dropdownEntryIndex, spinnerArray));
+                        dbHelp.setEditPageRow(pToA, pageData.get(assessment_position).get_assessments_questions_id(), convertOptionIntToStr(dropdownEntryIndex, spinnerArray));
                     }
 
                     @Override
@@ -277,7 +277,7 @@ public class MultiTypeListAdapter extends BaseAdapter {
         else {
             holder = (EditFragment.ViewHolder) view.getTag();
 
-            switch(type) {
+            switch (type) {
                 case 1:
                     holder.discreteSeekBar.setProgress(convertProgressToInt(pageData.get(position).get_answer()));
                     break;
@@ -312,14 +312,13 @@ public class MultiTypeListAdapter extends BaseAdapter {
     }
 
 
-
-    public int convertStrToOptionInt (String dropdownValue, List spinnerArray) {
+    public int convertStrToOptionInt(String dropdownValue, List spinnerArray) {
 //        Log.d("request!", "convertStrToOptionInt:dropdownValue: " + dropdownValue);
         Iterator iterator = spinnerArray.iterator();
         int i = 0;
         while (iterator.hasNext()) {
 //            Log.d("request!", "convertStrToOptionInt:spinnerArray: " + iterator.next());
-            if(dropdownValue.equals(iterator.next())){
+            if (dropdownValue.equals(iterator.next())) {
                 return i;
             }
             i++;
@@ -327,12 +326,12 @@ public class MultiTypeListAdapter extends BaseAdapter {
         return 0;
     }
 
-    public String convertOptionIntToStr (int optionInt, List spinnerArray){
+    public String convertOptionIntToStr(int optionInt, List spinnerArray) {
 //        Log.d("request!", "convertOptionIntToStr:optionInt: " + optionInt);
         Iterator iterator = spinnerArray.iterator();
         int i = 0;
         while (iterator.hasNext()) {
-            if(optionInt == i){
+            if (optionInt == i) {
                 return iterator.next().toString();
             } else {
                 iterator.next();
@@ -342,54 +341,54 @@ public class MultiTypeListAdapter extends BaseAdapter {
         return "";
     }
 
-    public int convertProgressToInt (String progressStr) {
+    public int convertProgressToInt(String progressStr) {
         int value = -1;
         switch (progressStr) {
-            case "F" :
+            case "F":
                 value = 0;
                 break;
-            case "A" :
+            case "A":
                 value = 1;
                 break;
-            case "B" :
+            case "B":
                 value = 2;
                 break;
-            case "C" :
+            case "C":
                 value = 3;
                 break;
-            case "D" :
+            case "D":
                 value = 4;
                 break;
-            case "E" :
+            case "E":
                 value = 5;
                 break;
         }
         return value;
     }
 
-    public boolean convertStrToChecked (String checked) {
+    public boolean convertStrToChecked(String checked) {
         return checked.equals("A");
     }
 
-    public String convertProgressToStr (int progressInt) {
+    public String convertProgressToStr(int progressInt) {
         String value = "";
         switch (progressInt) {
-            case 0 :
+            case 0:
                 value = "F";
                 break;
-            case 1 :
+            case 1:
                 value = "A";
                 break;
-            case 2 :
+            case 2:
                 value = "B";
                 break;
-            case 3 :
+            case 3:
                 value = "C";
                 break;
-            case 4 :
+            case 4:
                 value = "D";
                 break;
-            case 5 :
+            case 5:
                 value = "E";
                 break;
         }
